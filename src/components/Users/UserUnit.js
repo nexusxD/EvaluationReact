@@ -1,20 +1,18 @@
+import ButtonDelete from "../buttons/users/ButtonDelete";
 import ButtonUpdate from "../buttons/users/ButtonUpdate";
-import ButtonAdd from "../buttons/users/ButtonAdd";
+import classes from "./UserUnit.module.css";
 const UserUnit = (props) => {
   return (
-        <>
-            <td>{props.Name}</td>
-            <td>{props.Email}</td>
-            <td>{props.Phone}</td>
-            <td>{props.Type}</td>
-            <td>
-              <ButtonAdd>Add</ButtonAdd>
-              <ButtonUpdate>Update</ButtonUpdate>
-              <button>Delete</button>
-            </td>
-        </>
-      
-    
+    <>
+      <td>{props.name}</td>
+      <td>{props.email}</td>
+      <td>{props.phone}</td>
+      <td>{props.type}</td>
+      <td className={classes.actions}>
+        <ButtonUpdate className={classes.boton}>Update</ButtonUpdate>
+        <ButtonDelete className={classes.boton}>Delete</ButtonDelete>
+      </td>
+    </>
   );
 };
 

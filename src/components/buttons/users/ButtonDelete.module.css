@@ -1,0 +1,9 @@
+.button {
+  background-color: rgb(196, 38, 38);
+  color: aliceblue;
+  width:20%;
+  height: 2rem;
+  margin-left:40%;
+  margin-right:40%;
+  cursor: pointer;
+}

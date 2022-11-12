@@ -6,8 +6,8 @@ function ModalUserForm(props) {
     props.onCancel();
   }
   const submitUserHandler = async( userData)=> {
-    await fetch("https://localhost:7011/api/user/User/Add", {
-      method: "POST",
+    await fetch("https://localhost:7011/api/user/User/edit", {
+      method: "PUT",
       headers:{
         "Acept": "text/plain",
         "Content-Type": "application/json"

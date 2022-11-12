@@ -1,24 +1,25 @@
 import UserUnit from "./UserUnit";
+import classes from "./UserTable.module.css";
 
 const UserTable = (props) => {
   return (
-    <table>
+    <table className={classes.table} rules="all">
       <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
         <th>Type</th>
-        <th>Actions</th>
+        <th className={classes.actions}>Actions</th>
       </tr>
 
       {props.users.map((user) => (
-        <tr>
+        <tr key={user.userId}>
           <UserUnit
-            key={user.UserId}
-            Name={user.Name}
-            Email={user.Email}
-            Phone={user.Phone}
-            Type={user.Type}
+            key={user.userId}
+            name={user.name}
+            email={user.email}
+            phone={user.phone}
+            type={user.type}
           />
         </tr>
       ))}

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Backdrop from "../../../UI/Backdrop";
 import ModalIdForm from "../../modals/ModalIdForm";
-import classes from "./ButtonDelete.module.css";
+import classes from "./ButtonGetByUserId.module.css";
 
-const ButtonDelete = props => {
+const ButtonAdd = props => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   function getHandler() {
     setModalIsOpen(true);
@@ -15,11 +15,11 @@ const ButtonDelete = props => {
   return(
     <div>
       <button className={classes.button} onClick={getHandler}>
-        Delete
+        Get Item by User ID
       </button>
       {modalIsOpen && <ModalIdForm onCancel={closeModalHandler} />}
       {modalIsOpen && <Backdrop onClose={closeModalHandler} />}
     </div>
   );
 };
-export default ButtonDelete;
+export default ButtonAdd;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Backdrop from "../../../UI/Backdrop";
-import ModalItemForm from "../../modals/ModalItemForm";
+import ModalItemForm2 from "../../modals/ModalItemForm2";
+import classes from "./ButtonUpdate.module.css";
 
 const ButtonUpdate = props => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -13,10 +14,10 @@ const ButtonUpdate = props => {
 
   return(
     <div>
-      <button  onClick={getHandler}>
+      <button className={classes.button} onClick={getHandler}>
         Update
       </button>
-      {modalIsOpen && <ModalItemForm onCancel={closeModalHandler} />}
+      {modalIsOpen && <ModalItemForm2 onCancel={closeModalHandler} />}
       {modalIsOpen && <Backdrop onClose={closeModalHandler} />}
     </div>
   );

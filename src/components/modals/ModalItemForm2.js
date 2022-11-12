@@ -1,4 +1,4 @@
-import classes from "./ModalItemForm.module.css";
+import classes from "./ModalItemForm2.module.css";
 import ItemForm from "../articulo/ItemForm";
 
 function ModalItemForm(props) {
@@ -6,8 +6,8 @@ function ModalItemForm(props) {
     props.onCancel();
   }
   const submitItemHandler = async(itemData)=> {
-    await fetch("https://localhost:7011/api/item/Item/Add", {
-      method: "POST",
+    await fetch("https://localhost:7011/api/item/Item/Update", {
+      method: "PUT",
       headers:{
         "Acept": "text/plain",
         "Content-Type": "application/json"

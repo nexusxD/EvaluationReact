@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Backdrop from "../../../UI/Backdrop";
-import ModalIdForm from "../../modals/ModalIdForm";
-import classes from "./ButtonDelete.module.css";
+import ModalTradeForm from "../../modals/ModalTradeForm";
+import classes from "./ButtonTrade.module.css";
 
-const ButtonDelete = props => {
+const ButtonAdd = props => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   function getHandler() {
     setModalIsOpen(true);
@@ -15,11 +15,11 @@ const ButtonDelete = props => {
   return(
     <div>
       <button className={classes.button} onClick={getHandler}>
-        Delete
+        Trade
       </button>
-      {modalIsOpen && <ModalIdForm onCancel={closeModalHandler} />}
+      {modalIsOpen && <ModalTradeForm onCancel={closeModalHandler} />}
       {modalIsOpen && <Backdrop onClose={closeModalHandler} />}
     </div>
   );
 };
-export default ButtonDelete;
+export default ButtonAdd;

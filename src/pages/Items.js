@@ -1,26 +1,25 @@
+import ButtonAdd from "../components/buttons/items/ButtonAdd";
 import ItemTable from "../components/Items/ItemTable";
+import ButtonGetById from "../components/buttons/items/ButtonGetById";
+import ButtonGetAll from "../components/buttons/items/ButtonGetAll";
+import ButtonGetByUserId from "../components/buttons/items/ButtonGetByUserId";
+import ButtonTrade from "../components/buttons/items/ButtonTrade";
+import classes from "./Items.module.css";
+import {useState} from "react";
+
 function Items() {
-  const Dummy_Files = [
-    {
-      ItemId : 1,
-      Name: "Galletas",
-      Description: "Galletas Ricas",
-      Quantity: 15,
-      UserId: 1,
-    },
-    {
-      ItemId : 2,
-      Name: "Paletas",
-      Description: "De Pollo",
-      Quantity: 20,
-      UserId: 2,
-    },
-  ];
+  const [itemList, setItemList]=useState([]);
+  
   
   return(
   <div>
-    <p>Item Table</p>
-    <ItemTable items={Dummy_Files}/>
+    <ButtonGetAll itemsList={setItemList}/>
+    <ButtonAdd/>
+    <ButtonGetById/>
+    <ButtonGetByUserId/>
+    <ButtonTrade/>
+    <p className={classes.p}>Item Table</p>
+    <ItemTable items={itemList}/>
   </div>
   );
 }

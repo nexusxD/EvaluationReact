@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Backdrop from "../../../UI/Backdrop";
 import ModalItemForm from "../../modals/ModalItemForm";
+import classes from "./ButtonAdd.module.css";
 
 const ButtonAdd = props => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -10,16 +11,13 @@ const ButtonAdd = props => {
   function closeModalHandler() {
     setModalIsOpen(false);
   }
-  function onHandler (){
-    setModalIsOpen(true);
-  }
 
   return(
     <div>
-      <button  onClick={getHandler}>
+      <button className={classes.button} onClick={getHandler}>
         Add
       </button>
-      {modalIsOpen && <ModalItemForm onCancel={closeModalHandler} list={props.onAdd}/>}
+      {modalIsOpen && <ModalItemForm onCancel={closeModalHandler} />}
       {modalIsOpen && <Backdrop onClose={closeModalHandler} />}
     </div>
   );
